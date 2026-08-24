@@ -12,27 +12,34 @@ and is covered by Umbrel's own backup tooling.
 
 ## Images
 
-Images are **private**, hosted on GitHub Container Registry:
+umbreld cannot pull private registry images (its Engine-API pull sends no
+auth — [getumbrel/umbrel#2127](https://github.com/getumbrel/umbrel/pull/2127)),
+so images are served from a **loopback-only registry on the Umbrel itself**
+(`stockbridge-registry` container, `127.0.0.1:5000`, named volume
+`stockbridge-registry`, `restart=always`). The compose references
+`localhost:5000/stockbridge-{backend,frontend}:<version>`; the app code
+never leaves the box.
 
-- `ghcr.io/slongstreet/stockbridge-backend` — built from `backend/Dockerfile`
-- `ghcr.io/slongstreet/stockbridge-frontend` — built from `frontend/Dockerfile`
+- `stockbridge-backend` — built from `backend/Dockerfile`
+- `stockbridge-frontend` — built from `frontend/Dockerfile`
   with `--build-arg BACKEND_URL=http://longstreet-stockbridge_backend_1:8000`
   (the `/api` rewrite proxy is baked into the Next build, so the frontend
   image is specific to this app id)
 
-Tags match the Stockbridge app version (`frontend/package.json`).
+Tags match the Stockbridge app version (`frontend/package.json`). Images are
+built `linux/amd64` on the dev Mac and shipped over SSH:
+
+```bash
+docker save IMAGE... | gzip | ssh umbrel@umbrel-2.local 'gunzip | docker load'
+# then on the Umbrel: docker tag ... localhost:5000/... && docker push
+```
+
+(One-time registry setup:
+`docker run -d --name stockbridge-registry --restart=always -p 127.0.0.1:5000:5000 -v stockbridge-registry:/var/lib/registry registry:3`)
 
 ## Install (once)
 
-1. **Let the Umbrel pull private images** — SSH in and log Docker into ghcr
-   with a GitHub token that has `read:packages`:
-
-   ```bash
-   ssh umbrel@umbrel-2.local
-   sudo docker login ghcr.io -u slongstreet
-   ```
-
-2. **Add this store**: Umbrel dashboard → App Store → ⋯ → Community App
+1. **Add this store**: Umbrel dashboard → App Store → ⋯ → Community App
    Stores → add `https://github.com/slongstreet/umbrel-stockbridge`.
 
 3. **Install Stockbridge** from the store, then stop it and fill in config:
@@ -68,9 +75,9 @@ the eBay developer console.
 
 ## Releasing an update
 
-1. In the stockbridge repo: bump `frontend/package.json` version, then build
-   and push both images for `linux/amd64` with the new tag (frontend with the
-   `BACKEND_URL` build arg above).
+1. In the stockbridge repo: bump `frontend/package.json` version, build both
+   images for `linux/amd64` with the new tag (frontend with the `BACKEND_URL`
+   build arg above), and ship them into the Umbrel's registry (see Images).
 2. Here: update the image tags in
    `longstreet-stockbridge/docker-compose.yml` and `version` in
    `umbrel-app.yml`, commit, push.
