@@ -1,0 +1,29 @@
+# Stockbridge on umbrelOS.
+#
+# All durable state — .env, stockbridge.db, snapshot backups — lives in
+# ${APP_DATA_DIR}/data, which the backend mounts at /data and runs from.
+# Populate ${APP_DATA_DIR}/data/.env before first real use (see .env.example
+# in this folder and the repo README).
+#
+# Images are private (ghcr.io) — the host needs a one-time
+# `sudo docker login ghcr.io` with a GitHub token that has read:packages.
+services:
+  app_proxy:
+    environment:
+      APP_HOST: longstreet-stockbridge_frontend_1
+      APP_PORT: 3000
+
+  backend:
+    image: ghcr.io/slongstreet/stockbridge-backend:1.29.0
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+
+  frontend:
+    # Built with BACKEND_URL=http://longstreet-stockbridge_backend_1:8000 —
+    # the /api rewrite proxy is baked into the Next build, so the frontend
+    # image is specific to this app id.
+    image: ghcr.io/slongstreet/stockbridge-frontend:1.29.0
+    restart: on-failure
+    depends_on:
+      - backend

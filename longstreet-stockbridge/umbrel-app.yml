@@ -1,0 +1,24 @@
+manifestVersion: 1
+id: longstreet-stockbridge
+category: finance
+name: Stockbridge
+version: "1.29.0"
+tagline: eBay store command center
+description: >-
+  Self-hosted command center for an eBay store: inventory intake with barcode
+  scanning, AI-drafted listings, pricing comps, orders and shipping, P&L
+  reports, buyer messaging, and rule-based automations that run around the
+  clock.
+developer: Scott Longstreet
+website: https://github.com/slongstreet/stockbridge
+dependencies: []
+repo: https://github.com/slongstreet/umbrel-stockbridge
+support: https://github.com/slongstreet/umbrel-stockbridge/issues
+port: 8471
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: Scott Longstreet
+submission: https://github.com/slongstreet/umbrel-stockbridge
+releaseNotes: ""
