@@ -12,8 +12,10 @@ description: >-
 developer: Scott Longstreet
 website: https://github.com/slongstreet/stockbridge
 dependencies: []
-repo: https://github.com/slongstreet/umbrel-stockbridge
+# No `repo` field: umbrelOS renders any repo value as a hardcoded
+# "Source Code: Public" row, and the app code is private.
 support: https://github.com/slongstreet/umbrel-stockbridge/issues
+icon: https://raw.githubusercontent.com/slongstreet/umbrel-stockbridge/main/longstreet-stockbridge/icon.png
 port: 8471
 gallery: []
 path: ""
