@@ -56,12 +56,13 @@ eBay's OAuth callback requires a real-TLD HTTPS URL. With the Tailscale app
 installed on the Umbrel:
 
 ```bash
-sudo docker exec tailscale_web_1 tailscale serve --bg --https=8443 http://localhost:8471
+docker exec tailscale_web_1 tailscale serve --bg --https=443 http://localhost:8471
 ```
 
-gives `https://umbrel-2.<tailnet>.ts.net:8443/` a real Let's Encrypt cert
-(enable HTTPS certificates in the Tailscale admin console first). Use that
-origin as `FRONTEND_URL` and `<origin>/api/ebay/callback` as
+gives `https://umbrel-2.<tailnet>.ts.net/` a real Let's Encrypt cert (enable
+MagicDNS and HTTPS certificates in the Tailscale admin console first; the
+container is host-networked, so `localhost:8471` is the host's app_proxy
+port). Use that origin as `FRONTEND_URL` and `<origin>/api/ebay/callback` as
 `EBAY_OAUTH_CALLBACK_URL`, and register the callback against the RuName in
 the eBay developer console.
 
