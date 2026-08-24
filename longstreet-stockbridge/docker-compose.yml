@@ -14,6 +14,25 @@ services:
     environment:
       APP_HOST: longstreet-stockbridge_frontend_1
       APP_PORT: 3000
+      # The phone photo-upload page has to load on a device that has never
+      # signed in to umbrelOS — the QR code is scanned by a phone, and the
+      # auth gate bounces it to the login on port 2000 (plain HTTP, a
+      # different origin), which is where the flow died after the move here.
+      # These paths carry their own credential instead: /upload/<token> and
+      # the two API endpoints it calls are gated by a Fernet-encrypted,
+      # HMAC-authenticated token with a 1-hour TTL that only decrypts to one
+      # listing id. Everything else still needs the Umbrel session. Matching
+      # is prefix-based on "/x/*", and a blacklist would win over this — see
+      # app-proxy 1.7.0 utils/auth.js.
+      #
+      # /_next/static/* is the cost of admission: the upload page is a client
+      # component, so it can't hydrate without its JS/CSS chunks. That leaves
+      # the frontend bundles readable by anyone who can reach port 8471
+      # without logging in. No data and no secrets — those still need the
+      # token or the session — but the app's own JS is private, so this is a
+      # deliberate trade. Closing it would mean rewriting the upload page as
+      # self-contained server-rendered HTML from FastAPI.
+      PROXY_AUTH_WHITELIST: "/upload/*,/api/listings/photo-upload/*,/_next/static/*"
 
   backend:
     image: localhost:5000/stockbridge-backend:1.30.0
