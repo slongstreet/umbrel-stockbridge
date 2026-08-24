@@ -23,4 +23,20 @@ defaultUsername: ""
 defaultPassword: ""
 submitter: Scott Longstreet
 submission: https://github.com/slongstreet/umbrel-stockbridge
-releaseNotes: ""
+# Rewritten every release: umbrelOS shows this on the update prompt, so it
+# describes what changes for someone using the app, not what changed in the
+# code. Empty means the prompt says nothing.
+releaseNotes: >-
+  The pick list on the Orders page is now a proper pull sheet. Every line
+  shows its bin and its SKU together, with a photo and a quantity badge when
+  a sale needs more than one unit. Bins sort the way shelf labels actually
+  run, so B-2 comes before B-10 instead of after it. Tap a line to check it
+  off as you pull it, or hit Print and take the sheet to the shelves.
+
+
+  Bundles now break out into the individual items inside them, each with its
+  own bin and SKU. Previously a bundle was a single line even though filling
+  it means several pulls from different shelves.
+
+
+  Fixed: the order drawer never showed a bundle's per-item breakdown.
