@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.30.0"
+version: "1.31.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,16 +27,20 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The pick list on the Orders page is now a proper pull sheet. Every line
-  shows its bin and its SKU together, with a photo and a quantity badge when
-  a sale needs more than one unit. Bins sort the way shelf labels actually
-  run, so B-2 comes before B-10 instead of after it. Tap a line to check it
-  off as you pull it, or hit Print and take the sheet to the shelves.
+  Dates now follow your clock instead of the server's. Anything you list or
+  sell in the evening lands on today's bar in the dashboard charts rather
+  than sliding onto tomorrow's. The app had been reading the clock on the
+  machine it runs on, which is set to UTC and rolls over to the next day in
+  the early evening.
 
 
-  Bundles now break out into the individual items inside them, each with its
-  own bin and SKU. Previously a bundle was a single line even though filling
-  it means several pulls from different shelves.
+  The same correction reaches the Today sales card, your monthly goal
+  progress, inventory aging, and the monthly report — where a late sale on
+  the last day of a month was being counted toward the next one, which also
+  skewed that month's projections.
 
 
-  Fixed: the order drawer never showed a bundle's per-item breakdown.
+  Fixed: scanning the QR code to add photos from your phone. Since the move
+  to Umbrel the phone was being sent to the Umbrel login screen instead of
+  the upload page and couldn't get past it. The upload link carries its own
+  one-hour pass now, so the phone goes straight to the page.
