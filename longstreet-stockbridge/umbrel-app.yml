@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.32.0"
+version: "1.33.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,23 +27,25 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Open an order and you now get the whole picture of who bought it: what
-  they have spent with you all-time, how many orders they have placed, and
-  how far back they go as a customer. It used to just list their other
-  purchases.
+  The orders table now totals itself. At the bottom of any view you get what
+  the rows in front of you add up to — sold, fees, cost, and profit — so a
+  filtered or searched list answers "what did this batch actually make"
+  without exporting anything first. Cancelled orders stay out of the totals.
 
 
-  Those past purchases are clickable. Picking one opens that order in the
-  same panel, so you can walk back through a regular buyer's history
-  without losing your place or hunting for the order in the table.
+  Reports has stopped inventing category names. Revenue, ROI, and
+  how-fast-things-sell are now grouped by your own eBay Store categories,
+  the way you actually organize the store, instead of by keyword guesses at
+  the listing title.
 
 
-  You can keep a private note on any buyer — "collects DS games", "always
-  asks for a combined invoice". Only you ever see it, and it follows the
-  buyer into their message conversations. If they have a return in flight,
-  the panel says so before you ship, and there is a shortcut to eBay's
-  coupon page for that order when you want to thank a regular.
+  Two new boxes on that page: Profit by category, showing what each
+  category really cleared after fees and cost basis, and New listings by
+  category, showing what you have been putting up lately and what it is
+  worth. Both follow the period buttons at the top of the page.
 
 
-  The same buyer history sits under the conversation header in Messages,
-  folded away until you want it.
+  One thing to expect: listings that were already live on eBay before this
+  release do not have their store category recorded yet, so they start out
+  under "Uncategorized". Every sync quietly resolves another batch of them,
+  so the category reports fill themselves in over the next several syncs.
