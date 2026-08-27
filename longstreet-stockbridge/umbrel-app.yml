@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.33.0"
+version: "1.33.1"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,25 +27,11 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The orders table now totals itself. At the bottom of any view you get what
-  the rows in front of you add up to — sold, fees, cost, and profit — so a
-  filtered or searched list answers "what did this batch actually make"
-  without exporting anything first. Cancelled orders stay out of the totals.
+  Fixes a category that could appear twice in the Reports breakdowns. If you
+  ever renamed one of your eBay Store categories, listings created before the
+  rename still remembered the old name, so the category showed up as two
+  separate rows that each held part of the total.
 
 
-  Reports has stopped inventing category names. Revenue, ROI, and
-  how-fast-things-sell are now grouped by your own eBay Store categories,
-  the way you actually organize the store, instead of by keyword guesses at
-  the listing title.
-
-
-  Two new boxes on that page: Profit by category, showing what each
-  category really cleared after fees and cost basis, and New listings by
-  category, showing what you have been putting up lately and what it is
-  worth. Both follow the period buttons at the top of the page.
-
-
-  One thing to expect: listings that were already live on eBay before this
-  release do not have their store category recorded yet, so they start out
-  under "Uncategorized". Every sync quietly resolves another batch of them,
-  so the category reports fill themselves in over the next several syncs.
+  The reports now track a category by its identity rather than its name, so
+  a rename keeps everything together under the current name.
