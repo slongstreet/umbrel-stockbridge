@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.33.1"
+version: "1.34.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,11 +27,20 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Fixes a category that could appear twice in the Reports breakdowns. If you
-  ever renamed one of your eBay Store categories, listings created before the
-  rename still remembered the old name, so the category showed up as two
-  separate rows that each held part of the total.
+  Time labels now keep themselves current. "Synced 3m ago", message and
+  activity timestamps, and offer countdowns used to freeze at whatever they
+  said when the page loaded — a tab left open all afternoon still claimed a
+  sync from minutes ago. They now tick on their own, and the sync pill also
+  picks up background syncs (including failures, which turn it red) without
+  a click.
 
 
-  The reports now track a category by its identity rather than its name, so
-  a rename keeps everything together under the current name.
+  Best Offer countdowns are now trustworthy where it matters: when an offer
+  expires while you have it on screen, the Accept, Counter, and Decline
+  buttons disappear the moment the clock runs out instead of offering a
+  response eBay would reject. Expired offers also stop counting toward your
+  "offers to answer" until they clear on the next sync.
+
+
+  Small fix: the buyer panel's "Add buyer note" and "Send coupon on eBay"
+  links no longer run into each other.
