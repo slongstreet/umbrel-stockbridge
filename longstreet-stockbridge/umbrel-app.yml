@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.34.0"
+version: "1.35.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,20 +27,21 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Time labels now keep themselves current. "Synced 3m ago", message and
-  activity timestamps, and offer countdowns used to freeze at whatever they
-  said when the page loaded — a tab left open all afternoon still claimed a
-  sync from minutes ago. They now tick on their own, and the sync pill also
-  picks up background syncs (including failures, which turn it red) without
-  a click.
+  You can now change a listing's price without leaving the app. Open any
+  live listing and click the pencil next to its price: take 5% or 10% off
+  with one click, or type whatever price you want, including a higher one.
+  Before you commit, it shows what the new price nets you after fees,
+  shipping, and what the item cost — and warns you if it lands below your
+  break-even, without stopping you if that's what you meant to do.
 
 
-  Best Offer countdowns are now trustworthy where it matters: when an offer
-  expires while you have it on screen, the Accept, Counter, and Decline
-  buttons disappear the moment the clock runs out instead of offering a
-  response eBay would reject. Expired offers also stop counting toward your
-  "offers to answer" until they clear on the next sync.
+  Moving a price is safer now, too. Any Best Offer auto-accept and
+  auto-decline amounts shift along with the asking price. Applying a price
+  suggestion from the Listing Coach used to leave those amounts where they
+  were, which could quietly leave you auto-accepting offers above your new
+  asking price.
 
 
-  Small fix: the buyer panel's "Add buyer note" and "Send coupon on eBay"
-  links no longer run into each other.
+  Small fix: when eBay isn't connected, listing actions like publishing,
+  ending a listing, or editing photos now say so plainly instead of failing
+  with an unexplained error.
