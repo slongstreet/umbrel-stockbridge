@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.35.0"
+version: "1.36.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,21 +27,23 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  You can now change a listing's price without leaving the app. Open any
-  live listing and click the pencil next to its price: take 5% or 10% off
-  with one click, or type whatever price you want, including a higher one.
-  Before you commit, it shows what the new price nets you after fees,
-  shipping, and what the item cost — and warns you if it lands below your
-  break-even, without stopping you if that's what you meant to do.
+  When a buyer buys several items at once, the app now treats them as the one
+  package they are. On the pick list those items share a single card marked
+  "Pack together", listing each one with its own bin, so both come off the
+  shelf into the same box instead of sitting at opposite ends of your pull
+  walk with nothing connecting them.
 
 
-  Moving a price is safer now, too. Any Best Offer auto-accept and
-  auto-decline amounts shift along with the asking price. Applying a price
-  suggestion from the Listing Coach used to leave those amounts where they
-  were, which could quietly leave you auto-accepting offers above your new
-  asking price.
+  In the orders table, rows from the same checkout are marked and joined
+  together, so two "Needs label" rows no longer read as two labels to buy.
+  Open either one and a new "In this order" section shows the other items and
+  what the whole order came to — the sold total, the one set of fees, the one
+  shipping label, and the profit for the order as a whole. The tracking
+  number now says it covers every item in the order, rather than looking like
+  it got duplicated.
 
 
-  Small fix: when eBay isn't connected, listing actions like publishing,
-  ending a listing, or editing photos now say so plainly instead of failing
-  with an unexplained error.
+  The app also watches for a different case: the same buyer with two separate
+  orders waiting on labels, both going to the same address. Those are now
+  flagged on the orders page and the pick list, so you can combine them into
+  one shipment in eBay before buying two labels.
