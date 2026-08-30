@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.36.0"
+version: "1.37.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,23 +27,24 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  When a buyer buys several items at once, the app now treats them as the one
-  package they are. On the pick list those items share a single card marked
-  "Pack together", listing each one with its own bin, so both come off the
-  shelf into the same box instead of sitting at opposite ends of your pull
-  walk with nothing connecting them.
+  You can now buy shipping labels without leaving the app. Add an EasyPost or
+  Shippo account (or both) under Settings, and every order that needs a label
+  gets a Ship button: enter the package weight and size — box presets you
+  define fill the dimensions for you — and the app fetches rates from every
+  provider you enabled, side by side, cheapest first. One click buys the
+  label, opens it ready to print at 4×6, and sends the tracking number to
+  eBay so the order is marked shipped everywhere at once.
 
 
-  In the orders table, rows from the same checkout are marked and joined
-  together, so two "Needs label" rows no longer read as two labels to buy.
-  Open either one and a new "In this order" section shows the other items and
-  what the whole order came to — the sold total, the one set of fees, the one
-  shipping label, and the profit for the order as a whole. The tracking
-  number now says it covers every item in the order, rather than looking like
-  it got duplicated.
+  The label's cost lands on the order automatically and flows into your P&L,
+  the same as labels bought on eBay always have. Labels are kept on the box,
+  so you can reprint one any time from the order's panel, and if the tracking
+  upload to eBay ever fails the order shows a retry button rather than
+  losing anything.
 
 
-  The app also watches for a different case: the same buyer with two separate
-  orders waiting on labels, both going to the same address. Those are now
-  flagged on the orders page and the pick list, so you can combine them into
-  one shipment in eBay before buying two labels.
+  One thing to do after updating: reconnect eBay under Settings. Sending
+  tracking numbers needs one more permission than the app had before, and
+  eBay only grants it on a fresh connection. Until you do, labels still work
+  — the app just can't tell eBay about them, and Settings will show a
+  reminder.
