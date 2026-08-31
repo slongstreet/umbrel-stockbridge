@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.37.0"
+version: "1.38.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,24 +27,17 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  You can now buy shipping labels without leaving the app. Add an EasyPost or
-  Shippo account (or both) under Settings, and every order that needs a label
-  gets a Ship button: enter the package weight and size — box presets you
-  define fill the dimensions for you — and the app fetches rates from every
-  provider you enabled, side by side, cheapest first. One click buys the
-  label, opens it ready to print at 4×6, and sends the tracking number to
-  eBay so the order is marked shipped everywhere at once.
+  Sales that happen outside eBay finally count. Open any in-stock item and
+  hit "Mark sold" to record a Facebook Marketplace or in-person sale with its
+  price, where it sold, the date, and who bought it — the sale shows up on
+  the Orders page with a green venue badge and flows into your P&L, reports,
+  and monthly numbers just like an eBay order, with no fees. Multi-quantity
+  items can sell just some units, leaving the rest in stock. Recorded the
+  wrong thing? Open the order and hit "Remove sale" — the item goes straight
+  back to In Stock.
 
 
-  The label's cost lands on the order automatically and flows into your P&L,
-  the same as labels bought on eBay always have. Labels are kept on the box,
-  so you can reprint one any time from the order's panel, and if the tracking
-  upload to eBay ever fails the order shows a retry button rather than
-  losing anything.
-
-
-  One thing to do after updating: reconnect eBay under Settings. Sending
-  tracking numbers needs one more permission than the app had before, and
-  eBay only grants it on a fresh connection. Until you do, labels still work
-  — the app just can't tell eBay about them, and Settings will show a
-  reminder.
+  Writing off junk got faster too: select several items on the Inventory
+  page and the toolbar now has a Write off button that retires the whole
+  batch in one step, showing you the total dollar amount headed to your P&L
+  as a loss and taking one shared reason for the lot.
