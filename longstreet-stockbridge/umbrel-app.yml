@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.38.0"
+version: "1.38.1"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,17 +27,15 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Sales that happen outside eBay finally count. Open any in-stock item and
-  hit "Mark sold" to record a Facebook Marketplace or in-person sale with its
-  price, where it sold, the date, and who bought it — the sale shows up on
-  the Orders page with a green venue badge and flows into your P&L, reports,
-  and monthly numbers just like an eBay order, with no fees. Multi-quantity
-  items can sell just some units, leaving the rest in stock. Recorded the
-  wrong thing? Open the order and hit "Remove sale" — the item goes straight
-  back to In Stock.
+  Fixes a listing showing up twice. When the background sync and an
+  automation pass happened to run at the same moment, an "End & sell
+  similar" relist could leave two Active rows for one eBay listing, the
+  second one attached to a blank zero-cost item. The two jobs now take
+  turns instead of overlapping, the automation pass runs a minute after
+  each sync so it works from fresh data, and the sync double-checks before
+  creating a new listing row.
 
 
-  Writing off junk got faster too: select several items on the Inventory
-  page and the toolbar now has a Write off button that retires the whole
-  batch in one step, showing you the total dollar amount headed to your P&L
-  as a loss and taking one shared reason for the lot.
+  If you press Sync or Run now while the other job is mid-flight, the app
+  waits briefly and then tells you it is busy rather than running both at
+  once.
