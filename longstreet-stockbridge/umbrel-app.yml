@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.38.1"
+version: "1.39.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,15 +27,14 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Fixes a listing showing up twice. When the background sync and an
-  automation pass happened to run at the same moment, an "End & sell
-  similar" relist could leave two Active rows for one eBay listing, the
-  second one attached to a blank zero-cost item. The two jobs now take
-  turns instead of overlapping, the automation pass runs a minute after
-  each sync so it works from fresh data, and the sync double-checks before
-  creating a new listing row.
+  The monthly goals on the Dashboard now tell you how you are doing, not
+  just whether you are behind. Each goal shows its percent complete, the
+  total you are on pace to finish the month at, and what you need per day
+  to still hit it, all on one line. Once a goal is passed the percent keeps
+  climbing so you can see how far over you went.
 
 
-  If you press Sync or Run now while the other job is mid-flight, the app
-  waits briefly and then tells you it is busy rather than running both at
-  once.
+  Each progress bar carries a small tick at how much of the month has gone
+  by, so ahead or behind is something you can see at a glance rather than
+  read. The header shows how many days are left, and the per-day amounts
+  are rounded to whole dollars.
