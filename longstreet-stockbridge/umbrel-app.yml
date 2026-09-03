@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.40.0"
+version: "1.41.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,13 +27,22 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Sync with eBay is faster, and it stays fast as your store grows. The
-  parts of a sync that used to run one eBay call at a time (checking new
-  listings, sweeping ended ones, reading offers, chasing tracking numbers)
-  now run side by side, and the app no longer re-asks eBay about shipped
-  orders that simply have no tracking number.
+  Sync with eBay now only asks about what changed. Orders, fees, offers,
+  and view counts used to be re-pulled in full on every sync; now a
+  routine sync fetches just the orders and fee transactions that moved
+  since the last one, checks offers only on listings where something is
+  new, and refreshes view counts twice a day instead of every time. A
+  full pass still runs on its own schedule to catch cancellations, so
+  nothing is missed, just not re-read every four hours.
 
 
-  The app takes a moment longer to start after this update while the
-  database builds new indexes; every sync from then on is quicker. Nothing
-  changes on screen beyond the "Synced in" time.
+  Fee accuracy: the app now keeps every eBay fee transaction on file and
+  works each order's fees out from that record. This fixes a case where a
+  refund or shipping label arriving months after a sale could overwrite
+  the order's fees with only itself. The first sync after this update
+  pulls the year's fee history (a minute or so) and may correct fee
+  totals on older orders. That is the fix landing, not a mistake.
+
+
+  Offers that expired are now closed automatically instead of lingering
+  as open in the inbox.
