@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.39.0"
+version: "1.39.1"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,14 +27,14 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The monthly goals on the Dashboard now tell you how you are doing, not
-  just whether you are behind. Each goal shows its percent complete, the
-  total you are on pace to finish the month at, and what you need per day
-  to still hit it, all on one line. Once a goal is passed the percent keeps
-  climbing so you can see how far over you went.
+  Buying a shipping label through Shippo now works with USPS. The ship-from
+  address in Settings has a new Email field, and the Ship dialog will not
+  price a package until it is filled in, because USPS refuses to print a
+  label without a sender email. Open Settings, add your email to the
+  ship-from address, and save before your next label.
 
 
-  Each progress bar carries a small tick at how much of the month has gone
-  by, so ahead or behind is something you can see at a glance rather than
-  read. The header shows how many days are left, and the per-day amounts
-  are rounded to whole dollars.
+  When a label purchase is refused, the message now says which side turned
+  it down (USPS or Shippo) and why, instead of a wall of raw text. If Shippo
+  reports that invoices are past due, that is a billing hold on your Shippo
+  account and clears once you settle it on the Shippo site.
