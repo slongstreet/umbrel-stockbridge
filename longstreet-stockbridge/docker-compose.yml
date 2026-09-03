@@ -35,7 +35,7 @@ services:
       PROXY_AUTH_WHITELIST: "/upload/*,/api/listings/photo-upload/*,/_next/static/*"
 
   backend:
-    image: localhost:5000/stockbridge-backend:1.39.1
+    image: localhost:5000/stockbridge-backend:1.40.0
     restart: on-failure
     volumes:
       - ${APP_DATA_DIR}/data:/data
@@ -44,7 +44,7 @@ services:
     # Built with BACKEND_URL=http://longstreet-stockbridge_backend_1:8000 —
     # the /api rewrite proxy is baked into the Next build, so the frontend
     # image is specific to this app id.
-    image: localhost:5000/stockbridge-frontend:1.39.1
+    image: localhost:5000/stockbridge-frontend:1.40.0
     restart: on-failure
     depends_on:
       - backend
