@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.43.0"
+version: "1.44.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,25 +27,14 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Offers now come with context. When a buyer's offer is waiting, the offer
-  card tells you whether it is the best this listing has seen, what the
-  earlier offers ranged over (including offers on the listing this one
-  replaced), what you declined or countered before, how many times this
-  buyer has come back, and what you offered watchers. It also shows what
-  the item has sold for before, how the listing is doing, and what the
-  automation is about to do to the price, so you can see when an offer
-  beats a price drop that is already scheduled.
+  Shipping labels now print without the detour. As soon as a label is
+  bought, the print dialog opens on its own, and the Print label button in
+  the order drawer does the same, so there is no PDF to download, find, and
+  print by hand. A small "Download the PDF instead" link stays next to the
+  button if you ever want the file.
 
 
-  Messages opens straight on the Offers tab whenever an offer is waiting,
-  with the soonest-expiring one already open. Countering has one-click
-  prices for the midpoint, 5% under list, and your last counter. The
-  listing drawer has a new Offers section with the listing's offer
-  history and a link into the conversation.
-
-
-  The app now checks for new offers and buyer messages every 15 minutes
-  between syncs, instead of waiting up to four hours. The sidebar badge
-  refreshes on its own and the browser tab title shows how many offers
-  and messages need you, so a new offer is visible even when the app is
-  sitting in a background tab.
+  Labels are also centered on the 4x6 sticker instead of hugging the top
+  edge, so the first row no longer gets clipped. The gap around the label
+  is a new Print margin setting under Settings, Shipping labels (a quarter
+  inch to start). If your printer still trims an edge, raise it there.
