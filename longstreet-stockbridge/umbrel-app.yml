@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.44.0"
+version: "1.44.1"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,14 +27,13 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Shipping labels now print without the detour. As soon as a label is
-  bought, the print dialog opens on its own, and the Print label button in
-  the order drawer does the same, so there is no PDF to download, find, and
-  print by hand. A small "Download the PDF instead" link stays next to the
-  button if you ever want the file.
+  A buyer's offer could stay hidden. If a listing had been through an offer
+  before, a new one on that same listing could arrive without the app
+  noticing, so it sat in the eBay Seller Hub while Stockbridge showed
+  nothing to answer. One live offer was found this way.
 
 
-  Labels are also centered on the 4x6 sticker instead of hugging the top
-  edge, so the first row no longer gets clipped. The gap around the label
-  is a new Print margin setting under Settings, Shipping labels (a quarter
-  inch to start). If your printer still trims an edge, raise it there.
+  Every sync and every quarter-hourly check now asks eBay outright which
+  listings have an offer waiting, instead of relying on a count that does
+  not always move. Anything still missed is picked up within the hour
+  rather than half a day. Offers you already know about are unaffected.
