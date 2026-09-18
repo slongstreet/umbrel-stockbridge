@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.44.1"
+version: "1.44.2"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,13 +27,13 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  A buyer's offer could stay hidden. If a listing had been through an offer
-  before, a new one on that same listing could arrive without the app
-  noticing, so it sat in the eBay Seller Hub while Stockbridge showed
-  nothing to answer. One live offer was found this way.
+  Restocking a return no longer double-counts what the item cost when eBay
+  relisted it for you. When a refunded return goes straight back up through
+  eBay's own relist, Stockbridge already puts the unit back on the shelf
+  with its original cost. Choosing Restock on that return then added the
+  cost a second time, so the item looked twice as expensive as it was.
 
 
-  Every sync and every quarter-hourly check now asks eBay outright which
-  listings have an offer waiting, instead of relying on a count that does
-  not always move. Anything still missed is picked up within the hour
-  rather than half a day. Offers you already know about are unaffected.
+  Restock now sees that the unit is already back and only settles the
+  order: the cost comes off the sale, and the P&L stops showing the return
+  as a loss.
