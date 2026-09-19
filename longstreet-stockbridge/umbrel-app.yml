@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.45.0"
+version: "1.46.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,12 +27,14 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The Orders page has a new card where "Cancelled" used to be: Profit,
-  past 24 hours. It shows the total profit on everything you sold in the
-  last day, green when you came out ahead and red when you didn't, and
-  refreshes on its own as sales come in.
+  The four status cards on the Orders page (Needs label, Shipped, No cost
+  basis, Returns) now follow the 7d / 31d / 90d selector at the top of the
+  page instead of always counting all time. Each card says which window it
+  is on, so you can see how many orders you shipped or how many returns you
+  took over the period you're looking at. The Profit card keeps its own
+  past-24-hours window.
 
 
-  Click it and the table narrows to just those orders, so you can see
-  exactly which sales made up the number. A matching "Past 24h" chip sits
-  in the filter row, and the Cancelled chip is still there if you need it.
+  Clicking a card still narrows the table to exactly the orders it counted,
+  now within the same period. The plain "All" view and search are unchanged
+  and still cover every order, so older ones stay easy to find.
