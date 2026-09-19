@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.44.2"
+version: "1.45.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,13 +27,12 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Restocking a return no longer double-counts what the item cost when eBay
-  relisted it for you. When a refunded return goes straight back up through
-  eBay's own relist, Stockbridge already puts the unit back on the shelf
-  with its original cost. Choosing Restock on that return then added the
-  cost a second time, so the item looked twice as expensive as it was.
+  The Orders page has a new card where "Cancelled" used to be: Profit,
+  past 24 hours. It shows the total profit on everything you sold in the
+  last day, green when you came out ahead and red when you didn't, and
+  refreshes on its own as sales come in.
 
 
-  Restock now sees that the unit is already back and only settles the
-  order: the cost comes off the sale, and the P&L stops showing the return
-  as a loss.
+  Click it and the table narrows to just those orders, so you can see
+  exactly which sales made up the number. A matching "Past 24h" chip sits
+  in the filter row, and the Cancelled chip is still there if you need it.
