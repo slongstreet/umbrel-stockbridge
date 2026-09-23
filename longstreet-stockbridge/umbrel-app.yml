@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.47.1"
+version: "1.47.2"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,12 +27,7 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Fixes 1.47.0, where the dashboard, sync and most pages showed "Couldn't
-  reach the API" errors right after updating. Your data was not affected.
-
-
-  Also included from 1.47.0: new drafts fill in most item specifics (Brand,
-  Platform, Model, Color and more) from your title and similar eBay listings,
-  with each prefilled field labeled so you can check it. Price suggestions
-  now search using your item's own title and run on their own when a draft
-  opens. Items inside a live bundle now show as Listed instead of In Draft.
+  A maintenance update with nothing new to learn. Stockbridge's building
+  blocks were updated to pick up their security fixes, and every one is now
+  locked to an exact, tested version so future updates can't change them
+  unexpectedly.
