@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.46.0"
+version: "1.47.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,14 +27,20 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The four status cards on the Orders page (Needs label, Shipped, No cost
-  basis, Returns) now follow the 7d / 31d / 90d selector at the top of the
-  page instead of always counting all time. Each card says which window it
-  is on, so you can see how many orders you shipped or how many returns you
-  took over the period you're looking at. The Profit card keeps its own
-  past-24-hours window.
+  Creating a draft now fills in most of the item specifics for you. Brand,
+  Platform, Model, Color and eBay's other recommended fields are filled from
+  your item's title and from how similar live eBay listings are tagged. Only
+  empty fields are filled, and each prefilled field is labeled with where its
+  value came from ("from your title", "from similar listings", "from
+  barcode", and so on) so you can check it before publishing.
 
 
-  Clicking a card still narrows the table to exactly the orders it counted,
-  now within the same period. The plain "All" view and search are unchanged
-  and still cover every order, so older ones stay easy to find.
+  Price suggestions now search using your item's own title, so details like
+  "LL" or a color are no longer dropped, and they run on their own when the
+  draft opens. Bundle drafts note that the price comps cover the main item
+  alone.
+
+
+  Items inside a bundle now show as Listed once the bundle is live, instead
+  of staying In Draft. Bundles already affected are corrected on the next
+  sync.
