@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.47.2"
+version: "1.49.1"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,7 +27,14 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  A maintenance update with nothing new to learn. Stockbridge's building
-  blocks were updated to pick up their security fixes, and every one is now
-  locked to an exact, tested version so future updates can't change them
-  unexpectedly.
+  Schedule your listings. A draft now has a Schedule button next to Publish
+  to eBay: pick a date and time (8:00 PM by default) and Stockbridge
+  publishes it for you then. Select several drafts on the Inventory page to
+  schedule them together, all at once or spaced a few minutes apart.
+
+
+  The Inventory page has a new Scheduled card and filter, and each scheduled
+  item shows its go-live time. If a scheduled publish fails, or Stockbridge
+  wasn't running at the time, the item is flagged so you can publish it or
+  pick a new time. Nothing goes up late without asking you. Default time and
+  other limits are under Settings, Scheduled publishing.
