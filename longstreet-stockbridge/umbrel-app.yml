@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.49.1"
+version: "1.51.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,14 +27,18 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Schedule your listings. A draft now has a Schedule button next to Publish
-  to eBay: pick a date and time (8:00 PM by default) and Stockbridge
-  publishes it for you then. Select several drafts on the Inventory page to
-  schedule them together, all at once or spaced a few minutes apart.
+  The Listing Coach now answers "why hasn't this sold?" It has its own page
+  (Coach, in the sidebar) and puts each listing at the point where buyers
+  drop off: not being found, found and then passed over, or watched without
+  a sale. Each listing is judged against your own store, with the numbers
+  behind the verdict, and the fixes for that problem come first. Listings
+  that are simply too new to judge are left alone.
 
 
-  The Inventory page has a new Scheduled card and filter, and each scheduled
-  item shows its go-live time. If a scheduled publish fails, or Stockbridge
-  wasn't running at the time, the item is flagged so you can publish it or
-  pick a new time. Nothing goes up late without asking you. Default time and
-  other limits are under Settings, Scheduled publishing.
+  New checks catch prices below break-even, prices well above what you've
+  sold the same item for, a cheaper copy of the same item you also have
+  listed, a brand or model missing from the title, and paid shipping or no
+  returns. The Coach page also shows your store's usual time to sell, lets
+  you send offers to watchers or Sell Similar a whole group in one click,
+  and tracks which applied fixes actually led to more views and sales. Click
+  Re-analyze on the Coach page after updating.
