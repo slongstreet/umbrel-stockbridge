@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.51.1"
+version: "1.52.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,16 +27,15 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The Listing Coach is tuned against real store data. Offers to watchers
-  are now suggested only once a listing is past your usual time to sell,
-  instead of after a few days. Listings that almost nobody has viewed are
-  always flagged, even in quieter categories. Item specifics are only
-  suggested when buyers actually search for them, so the long list of
-  fields like MPN is gone.
+  The Listing Coach now uses eBay impressions: how often each listing was
+  shown in search and your store, and how often buyers clicked it. A new
+  "Shown, not clicked" stage catches listings buyers see but scroll past,
+  where the main photo, title, or price is the fix. Listings that are shown
+  and clicked normally are no longer told buyers can't find them.
 
 
-  The Coach page splits urgent listings (Needs attention) from small
-  improvements on listings that are doing fine (Quick fixes). Its "What's
-  worked" table now leads with sales. It also shows whether listings you
-  ended and relisted with Sell Similar sold afterward. Click Re-analyze on
-  the Coach page after updating.
+  Each listing's drawer has a Search funnel card: times shown,
+  click-through, and watchers, with daily charts and price changes. The AI
+  review now also critiques the main photo buyers see in search. History
+  starts filling in from the first sync after updating; click Re-analyze on
+  the Coach page once it has run.
