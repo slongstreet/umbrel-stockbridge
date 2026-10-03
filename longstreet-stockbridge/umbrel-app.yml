@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.54.0"
+version: "1.55.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,14 +27,15 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Listings now have a Checkup tab next to Overview, and the Coach page opens
-  listings on it. It puts the whole story in one place: the diagnosis, where
-  buyers drop off compared with your typical listing, a numbered list of
-  what to do, the market, and everything already tried, including earlier
-  relists, price changes, and how past suggestions worked out.
+  Automations now follow the Listing Coach. A price drop waits while buyers
+  aren't finding a listing, while it's on track, or while Best Offers are
+  waiting; End & sell similar waits while it's on track or offers are
+  waiting. A gentler step that's due, like an offer to watchers, still
+  runs. Each rule has a Follow the Coach switch, rule cards count held
+  listings, and held steps link to the listing's Checkup.
 
 
-  The AI checkup button writes a short summary, compares your listing's
-  photo, title, and price with competing copies, and names one next step.
-  It only uses the numbers in the checkup; any sentence quoting a figure it
-  wasn't given is removed.
+  Every suggested offer now shows what it nets after fees, the ad fee,
+  shipping, and cost, the same math as the listing's offer calculator. The
+  Coach no longer suggests an offer below break-even, and the bulk Send
+  offers dialog shows the total net if every offer is accepted.
