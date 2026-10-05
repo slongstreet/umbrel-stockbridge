@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.56.0"
+version: "1.57.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,7 +27,9 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Draft pricing now uses MogPrice sold comps. When you create a draft, you
-  get a suggested price built from what similar items actually sold for,
-  with the comps shown so you can see how it was figured. Connect MogPrice
-  in Settings to turn it on.
+  New Price check page in the sidebar: scan a box with your webcam, a USB
+  scanner, or your phone, or type the barcode, and see what it's worth based
+  on recent sold prices and your own sales, without creating an item.
+  Confirming the product remembers its barcode, so the next scan is instant,
+  including on the draft form. If eBay isn't connected, the scan dialog now
+  says so plainly instead of showing an error.
