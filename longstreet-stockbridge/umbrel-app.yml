@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.55.2"
+version: "1.56.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,7 +27,7 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Automation rule names now follow their settings: change a rule's days or
-  percent and a name like "Drop price 5% after 30 days" updates to match.
-  Rules you've already edited are corrected on update. Names you wrote
-  yourself are left alone.
+  Draft pricing now uses MogPrice sold comps. When you create a draft, you
+  get a suggested price built from what similar items actually sold for,
+  with the comps shown so you can see how it was figured. Connect MogPrice
+  in Settings to turn it on.
