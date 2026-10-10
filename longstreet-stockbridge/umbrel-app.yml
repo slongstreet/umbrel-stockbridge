@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.64.0"
+version: "1.65.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,8 +27,9 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  A behind-the-scenes update to the styling toolkit. Everything should look
-  the way it did, with a few small touches: status colours are a little
-  more vivid, all input hints use the same soft grey, date and time fields
-  line up with the boxes beside them, and the status dots for cancelled
-  orders and neutral items now show up.
+  Settings is now split into separate pages (eBay, Selling, Services, App)
+  with a menu down the side, instead of one long scroll. The Settings
+  overview shows how each area is doing at a glance and flags anything that
+  needs your attention. If you try to leave a settings page with changes you
+  haven't saved, you'll be asked first. Links elsewhere in the app, like
+  "Open Settings" in the Ship dialog, now go straight to the right page.
