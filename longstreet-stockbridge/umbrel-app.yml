@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.59.0"
+version: "1.63.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,10 +27,10 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The FCC ID field now remembers. Once you list a product with its FCC ID,
-  the next one with the same barcode or part number fills itself in. When
-  you've listed a model under more than one ID (different hardware
-  revisions), it offers them to pick from instead of guessing. As you type
-  an ID, it shows which company it's registered to with the FCC and warns
-  you if that doesn't match the brand, or if what you typed looks like a
-  model number rather than an FCC ID.
+  A security update. Other websites you visit can no longer send requests to
+  Stockbridge or read from it, and saved API keys are only ever sent to the
+  server you saved them for, so re-enter the key if you change an AI or
+  MogPrice server address. Backup exports no longer contain your eBay
+  connection or API keys; restoring a backup on this box keeps the
+  connection you already have. Draft listings now say "Connect eBay to load
+  store categories" instead of failing when eBay isn't connected.
