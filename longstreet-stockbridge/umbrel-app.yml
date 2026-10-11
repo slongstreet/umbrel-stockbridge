@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.68.0"
+version: "1.69.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,10 +27,8 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Stockbridge now fits phones and smaller windows. Below laptop width the
-  sidebar tucks away behind a menu button in a slim top bar, which also
-  shows the page you're on and a quick New listing button. A dot on the
-  menu button tells you when there's a new offer, message or activity, so
-  nothing hides behind the closed menu. Drop-down menus, like the New
-  listing menu and the category search on Templates, now stand out clearly
-  from the page behind them.
+  Messages has a new Mark all read button that clears every unread message
+  at once, both here and in your eBay inbox. The unread number on the
+  Messages menu item now counts only buyer messages, so eBay's own notices
+  no longer pile up there. Their count shows on the System filter instead.
+  Conversations waiting for your reply stay in the Needs reply list.
