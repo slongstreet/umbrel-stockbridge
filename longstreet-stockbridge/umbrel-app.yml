@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.65.0"
+version: "1.66.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,9 +27,11 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Settings is now split into separate pages (eBay, Selling, Services, App)
-  with a menu down the side, instead of one long scroll. The Settings
-  overview shows how each area is doing at a glance and flags anything that
-  needs your attention. If you try to leave a settings page with changes you
-  haven't saved, you'll be asked first. Links elsewhere in the app, like
-  "Open Settings" in the Ship dialog, now go straight to the right page.
+  New listing page: add an item and list it on one screen. Enter the title
+  (or scan the barcode), cost and source, then write and price the listing,
+  and it goes straight to eBay as a draft so you can add photos and publish
+  without leaving the page. A checklist on the side shows anything that would
+  stop it going live, like a missing template policy or price, with a link to
+  fix it. Your source, condition, bin and template carry over to the next
+  item. Drafts now need a price above $0, and comps say "Connect eBay" instead
+  of showing an error when eBay isn't connected.
