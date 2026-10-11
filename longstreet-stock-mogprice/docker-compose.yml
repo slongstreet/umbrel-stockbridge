@@ -1,0 +1,38 @@
+# MogPrice on umbrelOS: the API and the site that reads it.
+#
+# The site shows the private price set, so it stays behind the Umbrel login:
+# no PROXY_AUTH_WHITELIST here, ever, and no public tunnel to port 8472.
+#
+# Durable state — .env, mogprice.db, proof files, queued uploads — lives in
+# ${APP_DATA_DIR}/data, which the backend mounts at /data and runs from.
+# ${APP_DATA_DIR}/web holds the site's private read key, which the backend
+# makes at startup (WEB_KEY_FILE) and the site reads; nothing to set by hand.
+#
+# Images come from the loopback registry on the Umbrel (127.0.0.1:5000, the
+# one Stockbridge uses), shipped by scripts/deploy-umbrel.sh in the MogPrice
+# repo; the app code never leaves the box.
+services:
+  app_proxy:
+    environment:
+      APP_HOST: longstreet-stock-mogprice_web_1
+      APP_PORT: 3000
+
+  backend:
+    image: localhost:5000/mogprice-backend:0.6.5
+    restart: on-failure
+    environment:
+      WEB_KEY_FILE: /web/key
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+      - ${APP_DATA_DIR}/web:/web
+
+  web:
+    image: localhost:5000/mogprice-web:0.6.5
+    restart: on-failure
+    depends_on:
+      - backend
+    environment:
+      MOGPRICE_API_URL: http://longstreet-stock-mogprice_backend_1:8000
+      MOGPRICE_API_KEY_FILE: /run/mogprice/key
+    volumes:
+      - ${APP_DATA_DIR}/web:/run/mogprice:ro

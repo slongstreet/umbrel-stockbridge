@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: longstreet-stock-mogprice
+category: finance
+name: MogPrice
+version: "0.6.5"
+tagline: Video game prices with the sales behind them
+description: >-
+  A private price guide for video games and consoles: search, platform price
+  lists, product pages with their history and the sales behind each price, a
+  counter lookup for barcodes, and price-a-list. For the owner's use only.
+developer: Scott Longstreet
+website: https://github.com/slongstreet/umbrel-stockbridge
+dependencies: []
+# No `repo` field: umbrelOS renders any repo value as a hardcoded
+# "Source Code: Public" row, and the app code is private.
+support: https://github.com/slongstreet/umbrel-stockbridge/issues
+icon: https://raw.githubusercontent.com/slongstreet/umbrel-stockbridge/main/longstreet-stock-mogprice/icon.png
+port: 8472
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: Scott Longstreet
+submission: https://github.com/slongstreet/umbrel-stockbridge
+# Rewritten every release: umbrelOS shows this on the update prompt, so it
+# describes what changes for someone using the app. Empty says nothing.
+releaseNotes: ""
