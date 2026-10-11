@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.69.0"
+version: "1.70.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,8 +27,12 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Messages has a new Mark all read button that clears every unread message
-  at once, both here and in your eBay inbox. The unread number on the
-  Messages menu item now counts only buyer messages, so eBay's own notices
-  no longer pile up there. Their count shows on the System filter instead.
-  Conversations waiting for your reply stay in the Needs reply list.
+  The Activity page now tells you what happened while you were away. A
+  summary at the top shows sales, automation actions, new buyer messages
+  and offers, and anything that went wrong since your last visit, or over
+  the last 7 or 30 days. A new Automation results panel shows, for each
+  automation, how often it ran in the last 30 days and which sales followed
+  within two weeks. Automation entries are tagged with what happened next,
+  and new entries since your last visit are highlighted. Background syncs
+  that found nothing are tucked away and no longer bump the Activity
+  badge, and new filters cover automations, messages, offers and problems.
