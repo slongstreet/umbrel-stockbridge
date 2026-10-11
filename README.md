@@ -2,7 +2,8 @@
 
 Personal [community app store](https://github.com/getumbrel/umbrel-community-app-store)
 that packages [Stockbridge](https://github.com/slongstreet/stockbridge) (private
-repo) for umbrelOS. The store contains one app: `longstreet-stockbridge`.
+repo) for umbrelOS. The store contains two apps: `longstreet-stockbridge`, and
+`longstreet-stock-mogprice` (MogPrice, also private; see the end of this file).
 
 The app runs two containers — the FastAPI backend and the Next.js frontend —
 fronted by Umbrel's `app_proxy`, which adds the Umbrel password gate. All
@@ -82,3 +83,22 @@ the eBay developer console.
    `longstreet-stockbridge/docker-compose.yml` and `version` in
    `umbrel-app.yml`, commit, push.
 3. Umbrel dashboard → the app shows an update — click it.
+
+## MogPrice
+
+`longstreet-stock-mogprice` runs MogPrice's API and its private web site on
+port 8472, behind the Umbrel login like Stockbridge. The site shows a private
+price set, so the compose lets no path past the login and nothing should
+tunnel to the port publicly.
+
+- Images: `mogprice-backend` and `mogprice-web` in the same loopback
+  registry, shipped by `scripts/deploy-umbrel.sh` in the MogPrice repo
+  (tags match MogPrice's `web/package.json` version). The web image is not
+  app-id specific: the API address is set at runtime.
+- State: `~/umbrel/app-data/longstreet-stock-mogprice/data/` (database,
+  optional `.env`; see `data/.env.example`). The site's key is made by the
+  API at startup in `.../web/key`; there is nothing to configure.
+- Data: a new install starts empty. `scripts/umbrel-push-db.sh` in the
+  MogPrice repo replaces the database with a copy of a local one.
+- Releasing: run the deploy script, bump the image tags and `version` here,
+  push, and click Update.
