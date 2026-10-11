@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "1.70.0"
+version: "2.0.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,12 +27,13 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The Activity page now tells you what happened while you were away. A
-  summary at the top shows sales, automation actions, new buyer messages
-  and offers, and anything that went wrong since your last visit, or over
-  the last 7 or 30 days. A new Automation results panel shows, for each
-  automation, how often it ran in the last 30 days and which sales followed
-  within two weeks. Automation entries are tagged with what happened next,
-  and new entries since your last visit are highlighted. Background syncs
-  that found nothing are tucked away and no longer bump the Activity
-  badge, and new filters cover automations, messages, offers and problems.
+  Stockbridge 2.0 is a fresh look. Your colorway in Settings → Appearance
+  now tints the whole app, and dark mode is a softer near-black. The
+  Dashboard leads with your 31-day sales and the three things waiting on
+  you, and Needs attention reads as a to-do list. Every page has clearer
+  stat tiles, bigger product photos, and friendlier empty screens. Sync
+  status is a power light: green when synced, blinking amber while syncing,
+  red if a sync fails. A coin pops up in the corner when a new sale comes
+  in, with an optional chime. Listings can now switch between a table and
+  a shelf of photo cards. Appearance also has an optional handheld-style
+  screen for the Dashboard's sales figure.
