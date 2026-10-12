@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "2.1.0"
+version: "2.2.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,7 +27,9 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The Dashboard shows your eBay feedback star next to your feedback
-  score. Hover over it to see how far you are from the next star. The
-  Reports sales trend now has the same smooth line as the Dashboard, and
-  the Listings shelf shows sharper photos.
+  Order, listing, message and batch details have a new layout. The
+  numbers you open them for sit at the top, sections are tabs instead of
+  one long scroll, and the main action stays pinned at the bottom. Orders
+  show how long the item took to sell and eBay's ship-by date. Listings
+  can send an offer to everyone watching them. Message replies have
+  quick-reply buttons, and conversations read like a chat.
