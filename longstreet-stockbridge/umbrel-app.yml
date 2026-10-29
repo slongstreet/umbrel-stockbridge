@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "2.3.0"
+version: "2.4.0"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,8 +27,8 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  The FCC ID on a new draft now fills itself in when you pick a console
-  model or enter an MPN you've used before, and changes with the model if
-  you switch. Models you've listed under more than one FCC ID show the
-  options to pick from instead. Saving a draft is enough for Stockbridge
-  to remember its FCC ID, so you don't have to publish it first.
+  Returns now sync through eBay's newer Returns API. To switch over,
+  reconnect eBay once in Settings → eBay and approve the added returns
+  permission. Until you do, returns keep syncing the old way. After the
+  switch, a return covering several items from one order shows on each
+  of those items, and a closed return shows the date eBay closed it.
