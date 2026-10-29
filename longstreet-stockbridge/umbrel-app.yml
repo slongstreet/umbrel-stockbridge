@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "2.4.1"
+version: "2.4.2"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,5 +27,5 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Fixes returns not updating after you reconnected eBay for the new
-  Returns API. Closed returns now show the date eBay closed them.
+  Behind-the-scenes cleanup of the returns sync. Nothing changes in how
+  the app works.
