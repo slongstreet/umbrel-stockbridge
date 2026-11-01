@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "2.4.3"
+version: "2.4.4"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,6 +27,6 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Asks eBay for one more permission (managing listings through eBay's newer
-  Listing API) so it can be tested. Nothing changes in how the app works.
-  Reconnect eBay in Settings to grant it.
+  A listing you create on eBay with Sell Similar now gets its own inventory
+  item. Before, it was attached to the original listing's item, so the copy
+  had no inventory row where you could enter its sourcing and cost.
