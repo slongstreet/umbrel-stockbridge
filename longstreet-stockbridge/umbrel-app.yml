@@ -2,7 +2,7 @@ manifestVersion: 1
 id: longstreet-stockbridge
 category: finance
 name: Stockbridge
-version: "2.4.5"
+version: "2.8.3"
 tagline: eBay store command center
 description: >-
   Self-hosted command center for an eBay store: inventory intake with barcode
@@ -27,6 +27,11 @@ submission: https://github.com/slongstreet/umbrel-stockbridge
 # describes what changes for someone using the app, not what changed in the
 # code. Empty means the prompt says nothing.
 releaseNotes: >-
-  Sell Similar on a listing that already sold or ended now gets its own
-  inventory item too. Before, the copy could be attached to the sold item,
-  which marked that item as listed again and carried over its cost.
+  Relist cycles. Listings, Inventory and the listing drawer now show how many
+  times an item has been ended and relisted without selling, and its total
+  days on the market. Reports has a new Relist cycles view, and the dashboard's
+  aging chart counts from when an item was first listed. Automation rules can
+  be limited to a range of cycles, so End & sell similar can stop after a set
+  number of relists. A listing you recreated on eBay with Sell Similar can be
+  linked to the original so its cost and history carry over. Also fixed: a
+  sync no longer resets an item's condition to Used - Good.
